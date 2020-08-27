@@ -19,8 +19,8 @@
       :rules="rules.password"
     />
     <div style="margin: 16px;">
-      <van-button round block type="info" native-type="submit">
-        提交
+      <van-button block type="info" native-type="submit">
+        登录
       </van-button>
     </div>
     <p class="tips">已有账号？去<router-link to='/register'>注册</router-link></p>
@@ -41,6 +41,7 @@ export default {
       const { statusCode, message } = res.data
       if (statusCode === 200) {
         this.$toast.success(message)
+        this.$router.push('./user')
       } else {
         this.$toast(message)
       }
