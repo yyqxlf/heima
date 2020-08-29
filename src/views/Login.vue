@@ -31,6 +31,11 @@
 <script>
 // import axios from 'axios'
 export default {
+  created () {
+    const { username, password } = this.$route.params
+    this.username = username
+    this.password = password
+  },
   methods: {
     async login () {
       const res = await this.$axios.post('/login', {
@@ -66,7 +71,7 @@ export default {
 }
 </script>
 
-<style lang = 'less'>
+<style lang = 'less' scoped>
   .tips{
         text-align: right;
         font-size: 10px;
